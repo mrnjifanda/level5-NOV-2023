@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+
+    <header>
+      <nav>
+
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/about-us">About us</a></li>
+          <li><a href="/blog">Blog</a></li>
+          <li><a href="/contact-us">Contact us</a></li>
+        </ul>
+
+      </nav>
+    </header>
+
+
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>
+    <h1>Dashboard</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>ACtion</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% users.forEach(user => { %>
+                <tr>
+                    <td><%= user.name %></td>
+                    <td><%= user.email %></td>
+                </tr>
+            <% }) %>
+        </tbody>
+    </table>
+  </body>
+</html>
