@@ -1,0 +1,26 @@
+<%- include('inc/header.ejs') %>
+
+<div class="container">
+  <div class="row">
+
+    <% articles.forEach(article => { %>
+      <div class="col-md-3">
+        <div class="card mb-4" style="width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title">
+              <a href="/blog/1"><%= article.title %></a>
+            </h5>
+            <h6 class="card-subtitle mb-1 text-muted"><%= article.category %></h6>
+            <h6 class="card-subtitle mb-2 text-muted"><%= article.author %></h6>
+            <p class="card-text"><%= article.description %></p>
+          </div>
+        </div>
+      </div>
+    <% }) %>
+    
+  </div>
+</div>
+
+
+
+<%- include('inc/footer.ejs') %>

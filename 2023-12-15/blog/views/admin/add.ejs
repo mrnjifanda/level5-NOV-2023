@@ -1,0 +1,38 @@
+<%- include('../inc/header.ejs') %>
+
+    <div class="container">
+        <div class="row">
+            <div class="mb-5">
+                <a class="btn btn-primary" href="/admin/add">Add new article</a>
+            </div>
+        </div>
+        <div class="row">
+            <form action="/admin/create" method="POST">
+                <div class="mb-3">
+                  <label class="form-label">Title</label>
+                  <input type="text" class="form-control" name="title" placeholder="Title">
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Author</label>
+                    <input type="text" class="form-control" name="author" placeholder="Author">
+                </div>
+
+                <div class="mb-3">
+                    <select class="form-select" name="category">
+                        <option selected>Select category</option>
+                        <% categories.forEach(category => { %>
+                            <option value="<%= category %>"><%= category %></option>
+                        <% }) %>
+                      </select>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Content</label>
+                    <textarea class="form-control" name="description"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </form>
+        </div>
+    </div>
+
+<%- include('../inc/footer.ejs') %>
