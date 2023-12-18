@@ -1,20 +1,34 @@
 const express = require('express');
 const fs = require('fs');
 const path = require('path');
-
-const db_path = path.join(__dirname, '../db/articles.json');
+const User = require('../models/User');
+// const db_path = path.join(__dirname, '../db/articles.json');
 
 const router = express.Router();
 
-router.get('/', (req, res, next) => {
+router.get('/', async (req, res, next) => {
 
-    res.render('admin/dashboard');
+    const users = await User.find();
+    res.render('admin/dashboard', { users: users });
 });
 
 router.get('/add', (req, res, next) => {
 
     const categories = ['Food', 'Car', 'Sport'];
     res.render('admin/add', { 'categories': categories });
+});
+
+router.get('/create-user', (req, res, next) => {
+
+    res.render('admin/create-user');
+});
+
+router.post('/create-user', async (req, res, next) => {
+
+    const body = req.body;
+    const user = new User(body);
+    await user.save();
+    res.redirect('/admin');
 });
 
 router.post('/create', (req, res) => {

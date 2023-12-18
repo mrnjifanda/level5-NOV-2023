@@ -1,0 +1,25 @@
+<%- include('../inc/header.ejs') %>
+
+    <div class="container">
+        <div class="row">
+            <form action="/admin/create-user" method="POST">
+                <div class="mb-3">
+                  <label class="form-label">Name: </label>
+                  <input type="text" class="form-control" name="name" placeholder="Name">
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Age: </label>
+                    <input type="number" class="form-control" name="age" placeholder="Age">
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">City: </label>
+                    <input type="text" class="form-control" name="city" placeholder="City">
+                  </div>
+                <button type="submit" class="btn btn-primary">Create User</button>
+              </form>
+        </div>
+    </div>
+
+<%- include('../inc/footer.ejs') %>

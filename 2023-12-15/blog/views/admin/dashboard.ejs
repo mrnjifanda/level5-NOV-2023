@@ -4,8 +4,36 @@
         <div class="row">
             <div class="mb-5">
                 <a class="btn btn-primary" href="/admin/add">Add new article</a>
+                <a class="btn btn-primary" href="/admin/create-user">Add new user</a>
             </div>
         </div>
+        <div class="row">
+          <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Name</th>
+                  <th scope="col">Age</th>
+                  <th scope="col">City</th>
+                  <th scope="col">Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+
+                <% users.forEach(user => { %>
+                  <tr>
+                    <th scope="row"><%= user._id %></th>
+                    <td><%= user.name %></td>
+                    <td><%= user.age %></td>
+                    <td><%= user.city %></td>
+                    <td>
+                        <a href="/admin/edit/1">Edit</a> | <a href="/admin/delete/1">Delete</a>
+                    </td>
+                  </tr>
+                <% }) %>
+              </tbody>
+            </table>
+      </div>
         <div class="row">
             <table class="table">
                 <thead>
