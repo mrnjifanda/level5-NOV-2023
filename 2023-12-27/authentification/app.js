@@ -6,6 +6,7 @@ const logger = require('morgan');
 require('dotenv').config();
 const mongoose = require('mongoose');
 
+console.log(process.env);
 mongoose.connect(`${process.env.DATABASE_URL}`)
   .then(connection => {
     console.log('Connection Okay');

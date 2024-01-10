@@ -30,7 +30,7 @@ router.post('/register', async (req, res, next) => {
     res.render('register', {
       errors: errors,
       body: body
-    })
+    });
 
     return ;
   }
@@ -46,7 +46,5 @@ router.post('/register', async (req, res, next) => {
   await newUser.save();
   res.redirect('/?message=register+successfully');
 });
-
-
 
 module.exports = router;

@@ -1,0 +1,8 @@
+<% if(typeof errors !== 'undefined') { %>
+    <ul class="form-errors">
+        <% errors.forEach(error => {
+            const key = Object.keys(error)[0]; %>
+            <li><%= key %>: <%= error[key] %></li>
+        <% }) %>
+    </ul>
+<% } %>
