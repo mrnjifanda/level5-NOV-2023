@@ -15,6 +15,7 @@ const app = express();
 
 const indexRoute = require('./routes/index.route');
 const taskRouter = require('./routes/task.route');
+const mailRouter = require('./routes/mail.route');
 
 app.use(cors());
 app.use(express.json());
@@ -22,6 +23,7 @@ app.use(express.urlencoded({ extended: false }));
 
 app.use('/', indexRoute);
 app.use('/api/task', taskRouter);
+app.use('/api/mail', mailRouter);
 
 app.listen(3000, () => {
     console.log('RUN ON PORT 3000');
