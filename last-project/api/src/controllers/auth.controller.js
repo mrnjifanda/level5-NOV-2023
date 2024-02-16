@@ -2,6 +2,7 @@ const authService = require('../services/auth.service');
 
 const register = async (req, res, next) => {
 
+    console.log(req.body);
     const user = await authService.register(req.body);
     if (user.error) {
 

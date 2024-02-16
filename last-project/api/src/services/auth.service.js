@@ -5,10 +5,12 @@ const User = require('../models/User');
 class AuthService {
 
     constructor(model) {
+
         this.user = model;
     }
 
-    generateToken(id) {
+    generateToken (id) {
+
         return jwt.sign({ id: id }, process.env.JWT_SECRET, { expiresIn: '1800s' });
     }
 
